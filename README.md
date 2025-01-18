@@ -1,7 +1,11 @@
 #Youtube link is https://youtu.be/p2Yb0P0EHYo
+
 Commands as tested on Linux- 
+
 git clone https://github.com/ShaikhAariz/DevSprint-Solo-Sentinel
+
 npm install flag --force #IMPORTANT the flag --force should not be omitted
+
 npm start 
 
 
