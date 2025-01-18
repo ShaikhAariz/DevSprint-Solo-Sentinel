@@ -1,0 +1,241 @@
+/* General Body and Font Setup */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    background-image: url('/home/jundullah/retro game/retro-quiz-game/public/images/bruh.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    flex-direction: column;  /* Stack elements vertically */
+    text-align: center;      /* Center text */
+  }
+  
+  /* Main Container for Each Page */
+  .quiz-page, .home-page {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    flex-direction: column;
+    text-align: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Home Page Specific Styling */
+  body.home-page {
+    background: linear-gradient(to bottom, #ece4d3, #d1c4a7);
+    font-family: 'Times New Roman', serif;
+  }
+  
+  /* Newspaper Container (Centering Inside Home Page) */
+  .newspaper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative; /* To position the retro animation to the left */
+    z-index: 1; /* Ensure the newspaper is in front of the animation */
+  }
+  
+  /* Animated Newspaper Styling */
+  .animated-newspaper {
+    background: #f9f1e7;
+    border: 5px solid #000;
+    width: 70%;
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    transform: perspective(800px) rotateX(0deg);
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Hover Effect for Newspaper */
+  .animated-newspaper:hover {
+    transform: perspective(800px) rotateX(10deg);
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Newspaper Title */
+  .newspaper-title {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Newspaper Tagline */
+  .newspaper-tagline {
+    font-size: 1.5em;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  /* Click-to-Enter Text Styling */
+  .click-to-enter {
+    font-size: 1.2em;
+    color: #e63946;
+    text-decoration: underline;
+    animation: fadeIn 1.5s infinite alternate;
+  }
+  
+  /* Retro Button Styling */
+  .retro-button {
+    background-color: #ffcc00;
+    border: 2px solid #000;
+    color: #000;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .retro-button:hover {
+    background-color: #ffe680;
+    transform: scale(1.1);
+  }
+  
+  .retro-button:active {
+    background-color: #ffd633;
+    transform: scale(0.95);
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Retro Title Styling */
+  h1 {
+    font-size: 4em;
+    color: #ff6347;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    animation: flash 1s infinite;
+    font-family: 'Press Start 2P', sans-serif;
+  }
+  
+  /* Keyframe Animation for Flashing Effect */
+  @keyframes flash {
+    0% { color: #ff6347; }
+    50% { color: #2a9d8f; }
+    100% { color: #ff6347; }
+  }
+  
+  /* Retro Animation near the Top of the Page */
+  .retro-animation {
+    position: absolute;
+    top: 5%; /* Move the animation just below the header */
+    left: 0;
+    width: 100%;
+    z-index: 0; /* Keep the animation behind other elements */
+  }
+  
+  .bouncing-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #ff003c;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    animation: sineWave 5s infinite linear, bounce 1s infinite ease-in-out;
+  }
+  
+  /* Sine Wave Animation */
+  @keyframes sineWave {
+    0% {
+      left: 0%;
+      transform: translateY(0); /* Starts at the top position */
+    }
+    25% {
+      left: 25%;
+      transform: translateY(0); /* Moves to the right */
+    }
+    50% {
+      left: 50%;
+      transform: translateY(0); /* Moves further right */
+    }
+    75% {
+      left: 75%;
+      transform: translateY(0); /* Moves further right */
+    }
+    100% {
+      left: 100%;
+      transform: translateY(0); /* Moves to the extreme right */
+    }
+  }
+  
+  /* Bounce Animation */
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px); /* Moves the circle up further */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Layout Adjustments */
+  @media (max-width: 768px) {
+    .newspaper-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .retro-animation {
+      left: 50%;
+      transform: translateX(-50%); /* Centers the animation on small screens */
+    }
+  
+    .bouncing-circle {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .retro-button {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  
+    h1 {
+      font-size: 3em;
+    }
+  
+    .newspaper-title {
+      font-size: 2.5em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2.5em;
+    }
+  
+    .newspaper-title {
+      font-size: 2em;
+    }
+  
+    .newspaper-tagline {
+      font-size: 1.2em;
+    }
+  }

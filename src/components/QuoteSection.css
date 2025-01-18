@@ -1,0 +1,21 @@
+/* src/QuoteSection.css */
+.quote-container {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Press Start 2P', sans-serif;
+    max-width: 90%; /* Restrict the width of the container */
+    margin-left: auto;
+    margin-right: auto; /* Center the container */
+  }
+  
+  .quote {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 20px 0;
+    word-wrap: break-word; /* Ensure long words wrap */
+    word-break: break-word; /* Break long words if necessary */
+    white-space: pre-wrap; /* Preserve spaces and wrap text */
+    max-width: 100%; /* Make sure text doesn't exceed the container */
+  }
+  
